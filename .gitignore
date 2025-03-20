@@ -176,3 +176,4 @@ cython_debug/
 django_venv/
 *.pdf
 migrations/
+.DS_Store
