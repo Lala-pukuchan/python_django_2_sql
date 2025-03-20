@@ -1,0 +1,30 @@
+<h1>Ex10: Search</h1>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Search</button>
+</form>
+<br>
+{% if message %}
+  <p>{{ message }}</p>
+{% endif %}
+{% if results %}
+  <table border="1">
+    <tr>
+      <th>Film Title</th>
+      <th>Character Name</th>
+      <th>Gender</th>
+      <th>Homeworld Name</th>
+      <th>Homeworld Diameter</th>
+    </tr>
+    {% for r in results %}
+    <tr>
+      <td>{{ r.film_title }}</td>
+      <td>{{ r.character_name }}</td>
+      <td>{{ r.gender }}</td>
+      <td>{{ r.homeworld_name }}</td>
+      <td>{{ r.homeworld_diameter }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+{% endif %}
